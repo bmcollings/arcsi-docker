@@ -4,7 +4,7 @@ ENV LANG=C.UTF-8 LC_ALL=C.UTF-8
 ENV PATH=/opt/miniconda/bin:$PATH
 
 RUN apt-get update --fix-missing && \
-    apt-get install -y apt-utils wget bzip2 ca-certificates curl git binutils vim make unzip gcc && \
+    apt-get install -y apt-utils wget bzip2 ca-certificates curl git binutils vim make unzip gcc parallel && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
