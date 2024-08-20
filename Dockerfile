@@ -15,10 +15,6 @@ RUN wget --quiet https://github.com/conda-forge/miniforge/releases/download/24.3
     echo ". /opt/miniforge/etc/profile.d/conda.sh" >> ~/.bashrc && \
     echo "conda activate base" >> ~/.bashrc
 
-# Use python 3.11, install mamba, update conda base
-# RUN conda install --yes -c conda-forge python=3.11; sync \
-#     && conda install --yes mamba -n base -c conda-forge; sync
-
 # add requirements file create env and activate environment when container is run
 ADD requirements.txt /req/requirements.txt
 RUN conda create --name arcsi --file /req/requirements.txt --channel conda-forge python=3.11 \
